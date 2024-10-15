@@ -83,6 +83,10 @@ const Header: Component = () => {
     });
   }
 
+  createEffect(() => {
+    console.log("createEffect tweenedValue()", tweenedValue());
+  });
+
   createEffect(
     on(
       tweenedValue,
