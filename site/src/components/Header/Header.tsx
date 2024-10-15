@@ -6,6 +6,7 @@ import {
   createSignal,
   untrack,
   onCleanup,
+  on,
 } from "solid-js";
 import { makeEventListener } from "@solid-primitives/event-listener";
 import { isMobile, isSafari } from "@solid-primitives/platform";
@@ -83,16 +84,31 @@ const Header: Component = () => {
   }
 
   createEffect(
-    defer(tweenedValue, tweenedValue => {
-      console.log({ tweenedValue });
-      navMenu.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
-      headerBottomGradientBorder.style.transform = `translateY(${tweenedValue}px)`;
-      headerShadow.style.transform = `translateY(${tweenedValue}px)`;
-      headerOpaqueBg.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
-      gradientOverflowLeftBG.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
-      gradientOverflowRightBG.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
-    }),
+    on(
+      tweenedValue,
+      tweenedValue => {
+        console.log({ tweenedValue });
+        navMenu.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
+        headerBottomGradientBorder.style.transform = `translateY(${tweenedValue}px)`;
+        headerShadow.style.transform = `translateY(${tweenedValue}px)`;
+        headerOpaqueBg.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
+        gradientOverflowLeftBG.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
+        gradientOverflowRightBG.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
+      },
+      { defer: true },
+    ),
   );
+  // createEffect(
+  //   defer(tweenedValue, tweenedValue => {
+  //     console.log({ tweenedValue });
+  //     navMenu.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
+  //     headerBottomGradientBorder.style.transform = `translateY(${tweenedValue}px)`;
+  //     headerShadow.style.transform = `translateY(${tweenedValue}px)`;
+  //     headerOpaqueBg.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
+  //     gradientOverflowLeftBG.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
+  //     gradientOverflowRightBG.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
+  //   }),
+  // );
   createEffect(
     defer(isNavOpen, isNavOpen => {
       console.log({ isNavOpen });
