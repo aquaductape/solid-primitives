@@ -1017,8 +1017,8 @@ importers:
         specifier: workspace:^
         version: link:../packages/scroll
       '@solid-primitives/tween':
-        specifier: workspace:^
-        version: link:../packages/tween
+        specifier: ^1.3.0
+        version: 1.3.0(solid-js@1.8.22)
       '@solid-primitives/utils':
         specifier: workspace:^
         version: link:../packages/utils
@@ -2660,6 +2660,11 @@ packages:
 
   '@solid-primitives/transition-group@1.0.5':
     resolution: {integrity: sha512-G3FuqvL13kQ55WzWPX2ewiXdZ/1iboiX53195sq7bbkDbXqP6TYKiadwEdsaDogW5rPnPYAym3+xnsNplQJRKQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
+
+  '@solid-primitives/tween@1.3.0':
+    resolution: {integrity: sha512-APS/C++t0DY0KoWkDbFX7yqykpQ0rdmmv/A42+7zwxy0X0uxgVC3kYqH8gP5eh6HVrDbgtguTTBsb1irhbNjHg==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -8246,6 +8251,10 @@ snapshots:
   '@solid-primitives/transition-group@1.0.5(solid-js@1.8.20)':
     dependencies:
       solid-js: 1.8.20
+
+  '@solid-primitives/tween@1.3.0(solid-js@1.8.22)':
+    dependencies:
+      solid-js: 1.8.22
 
   '@solid-primitives/utils@6.2.3(solid-js@1.8.20)':
     dependencies:
