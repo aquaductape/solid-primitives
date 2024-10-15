@@ -45,6 +45,7 @@ const Header: Component = () => {
     return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
   };
   const tweenedValue = createTween(from, { ease: easeInOutCubic, duration: OPEN_NAV_DURATION });
+  console.log(tweenedValue, { OPEN_NAV_DURATION });
   const location = useLocation();
   let gradientOverflowLeftBG!: HTMLDivElement;
   let gradientOverflowRightBG!: HTMLDivElement;
