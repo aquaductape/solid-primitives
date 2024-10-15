@@ -83,6 +83,7 @@ const Header: Component = () => {
 
   createEffect(
     defer(tweenedValue, tweenedValue => {
+      console.log({ tweenedValue });
       navMenu.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
       headerBottomGradientBorder.style.transform = `translateY(${tweenedValue}px)`;
       headerShadow.style.transform = `translateY(${tweenedValue}px)`;
@@ -91,7 +92,6 @@ const Header: Component = () => {
       gradientOverflowRightBG.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
     }),
   );
-  console.log("Header mount!!");
   createEffect(
     defer(isNavOpen, isNavOpen => {
       console.log({ isNavOpen });
