@@ -91,9 +91,10 @@ const Header: Component = () => {
       gradientOverflowRightBG.style.transform = `translateY(${-navMenuHeight + tweenedValue}px)`;
     }),
   );
-
+  console.log("Header mount!!");
   createEffect(
     defer(isNavOpen, isNavOpen => {
+      console.log({ isNavOpen });
       if (isNavOpen) {
         navMenuHeight = navMenu.clientHeight;
 
@@ -163,7 +164,7 @@ const Header: Component = () => {
             </div>
             <A href="/">
               <img
-                class="hidden h-[28px] dark:hidden sm:block sm:h-[40px]"
+                class="hidden h-[28px] sm:block sm:h-[40px] dark:hidden"
                 src="/img/solid-primitives-logo.svg"
                 alt=""
               />
@@ -173,12 +174,12 @@ const Header: Component = () => {
                 alt=""
               />
               <img
-                class="h-[28px] dark:hidden sm:hidden sm:h-[40px]"
+                class="h-[28px] sm:hidden sm:h-[40px] dark:hidden"
                 src="/img/solid-primitives-stacked-logo.svg"
                 alt=""
               />
               <img
-                class="hidden h-[28px] dark:block sm:!hidden sm:h-[40px]"
+                class="hidden h-[28px] sm:!hidden sm:h-[40px] dark:block"
                 src="/img/solid-primitives-stacked-dark-logo.svg"
                 alt=""
               />
@@ -231,9 +232,11 @@ const Header: Component = () => {
             class="-translate-y-full"
             animation={{
               onEnter: (_, done) => {
+                console.log("onEnter");
                 setTimeout(done, OPEN_NAV_DURATION);
               },
               onExit: (_, done) => {
+                console.log("onExit");
                 setTimeout(done, OPEN_NAV_DURATION);
               },
             }}

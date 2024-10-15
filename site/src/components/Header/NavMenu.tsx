@@ -13,6 +13,7 @@ const NavMenu: Component<RefProps<HTMLDivElement> & { onClose: () => void }> = p
     "Basic and Compound Primitives",
     "Managing Primitive Complexity",
   ];
+  console.log("NavMenu mount!!!");
   return (
     <div ref={props.ref}>
       <div class="mx-4 my-1 border-b-2 border-slate-200 dark:border-slate-600" />
