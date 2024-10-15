@@ -134,10 +134,12 @@ const Header: Component = () => {
         headerOpaqueBgContainer.style.top = "1px";
 
         requestAnimationFrame(() => {
+          console.log("fire setFrom", { navMenuHeight });
           setFrom(navMenuHeight);
         });
         return;
       }
+      console.log("fire setFrom", { navMenuHeight: 0 });
       setFrom(0);
     }),
   );
